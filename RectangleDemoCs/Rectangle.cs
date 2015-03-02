@@ -1,8 +1,9 @@
 ﻿using System;
+using RectangleDemoCs.Interfaces;
 
 namespace RectangleDemoCs
 {
-    public class Rectangle
+    public class Rectangle : IShape
     {
         public decimal Length { get; private set; }
         public decimal Width { get; private set; }

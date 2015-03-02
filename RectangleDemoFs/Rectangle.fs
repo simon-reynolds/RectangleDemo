@@ -1,8 +1,10 @@
 ﻿namespace RectangleDemoFs
 
 open System
+open RectangleDemoFs.Interfaces
 
 type Rectangle(length: decimal, width: decimal) =
+    
     do
         if length <= 0m then raise (ArgumentOutOfRangeException("length"))
         if width <= 0m then raise (ArgumentOutOfRangeException("width"))
@@ -17,10 +19,11 @@ type Rectangle(length: decimal, width: decimal) =
     member val Width =
         width
 
-    member val Area =
-        length * width
+    interface IShape with
+        member val Area =
+            length * width
 
-    member val Perimeter =
-        (length * 2m) + (width * 2m)
+        member val Perimeter =
+            (length * 2m) + (width * 2m)
 
     

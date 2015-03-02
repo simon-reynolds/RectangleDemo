@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using NUnit;
 using NUnit.Framework;
 
@@ -22,6 +23,15 @@ namespace RectangleDemoTests
         public void Constructor_ThrowsException_WhenLengthIsZero()
         {
             var rectangle = new Rectangle(0, 10);
+        }
+
+        [Test]
+        public void GivenLength10AndWidth5_AreaIs50_PermieterIs30()
+        {
+            var rectangle = new Rectangle(10, 5);
+
+            Assert.That(rectangle.Area, Is.EqualTo(50));
+            Assert.That(rectangle.Perimeter, Is.EqualTo(30));
         }
     }
 }
